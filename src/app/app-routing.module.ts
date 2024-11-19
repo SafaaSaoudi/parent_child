@@ -21,7 +21,7 @@ const routes: Routes = [
   },
   {
     path:'categories', component:ListCategoriesComponent,
-    children:[ {path:'detail', component:DetailsCategoryComponent}]
+    children:[ {path:'detail/id', component:DetailsCategoryComponent}]
   },
   {
     path:'addCategorie', component:AddCategorieComponent,
