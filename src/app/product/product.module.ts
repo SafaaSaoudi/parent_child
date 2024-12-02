@@ -5,6 +5,7 @@ import { ProductRoutingModule } from './product-routing.module';
 import { ProductsComponent } from './products/products.component';
 import { FormProductComponent } from './form-product/form-product.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CategorieService } from '../core/categorie.service';
 
 
 @NgModule({
@@ -17,6 +18,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ProductRoutingModule,
     FormsModule,
     ReactiveFormsModule
-  ]
+  ],
+ 
 })
 export class ProductModule { }

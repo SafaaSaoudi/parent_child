@@ -1,11 +1,14 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Product } from '../models/product';
+import { CategorieService } from '../core/categorie.service';
+import { Categorie } from '../models/categorie';
 
 @Component({
   selector: 'app-product-category',
   templateUrl: './product-category.component.html',
-  styleUrls: ['./product-category.component.css']
+  styleUrls: ['./product-category.component.css'],
+  //providers:[CategorieService]
 })
 export class ProductCategoryComponent {
 constructor(private actr:ActivatedRoute){}
@@ -29,6 +32,9 @@ listProducts :   Product[]=[
   {"id":6, "name":"TV 50''LG","image":"assets/images/tv_lg.jpg","categoryId":5, "description":"",
   "price":1800,"brand":"LG","promotion":0},
 ]
+
+//category= this.cateServ.getCategoryById(1);
+
 ngOnInit(){
   
   //snapshot
@@ -46,6 +52,8 @@ ngOnInit(){
  // console.log(this.id)
   //console.log(this.productsByCatrgorie.length)
  // console.log(this.categorie)
+
+ //this.category!.description= " hello from product category";
 }
 
   

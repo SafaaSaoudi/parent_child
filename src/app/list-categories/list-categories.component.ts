@@ -13,12 +13,26 @@ export class ListCategoriesComponent {
  
   constructor(private catServ: CategorieService){}
 
-  categories: Categorie[] = this.catServ.getAllCategories();
+  categories: Categorie[] = []
   
   shorList: Shortlist[]=[];
   titre='';
 
   @ViewChildren( CardComponent) cardList!: QueryList<CardComponent>;
+
+
+  ngOnInit(){
+    this.catServ.getAllCategories().subscribe(
+      (data) => this.categories=data,
+      (error) => alert('liste introuvable'),
+      () => alert('completed')
+    );
+
+  }
+
+
+
+
 
   ngAfterViewInit(){
 
@@ -30,15 +44,9 @@ export class ListCategoriesComponent {
         card.isAvailable=false;}
       else
         {card.btnText='Voir Produits';
-        card.isAvailable=true;}
-        
-        
+        card.isAvailable=true;} 
       });
-  
-    
   }
-
-
 
 
 showDesc(x:string){
