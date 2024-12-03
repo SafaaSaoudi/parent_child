@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Categorie } from '../models/categorie';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { ProduitService } from './produit.service';
 
 @Injectable({
   providedIn: 'root' //visiblity tout le projet (composants et modules)
@@ -12,28 +13,34 @@ export class CategorieService {
   
   categories : Categorie[]=[]
   URL = 'http://localhost:3000/categories';
-  constructor( private http: HttpClient) { }
+  
+  constructor( private http: HttpClient, private productS:ProduitService) { }
 
   getAllCategories(): Observable<Categorie[]>{
     return this.http.get<Categorie[]>(this.URL);
   }
 
-
-
-  getCategoryById(id:number){
-    return this.categories.find(e=>e.id==id);
+  getCategorieById(id:number){
+    return this.http.get(this.URL+'/'+id);
   }
 
-  addCategorie(categorie:Categorie){
-    this.categories.push(categorie);
+  addCategorie(P:Categorie){
+    return this.http.post(this.URL, P);
+  }
+
+  updateCategorie(C:Categorie){
+    return this.http.put(this.URL+'/'+C.id, C);
   }
 
   deleteCategorie(id:number){
-    this.categories=this.categories.filter(e=>e.id!=id);
+    //Delete des produits par categorie
+
+    this.productS.getProductByCategorie(id).subscribe(
+      (data) => {
+        data.forEach(p => this.productS.deleteProduct(p.id).subscribe())
+      } 
+    )
+    return this.http.delete(this.URL+'/'+id);
   }
 
-  updateCategorie(categorie:Categorie){
-    let index=this.categories.findIndex(e=>e.id==categorie.id);
-    this.categories[index]=categorie;
-  }
 }

@@ -23,16 +23,15 @@ export class ListCategoriesComponent {
 
   ngOnInit(){
     this.catServ.getAllCategories().subscribe(
-      (data) => this.categories=data,
-      (error) => alert('liste introuvable'),
-      () => alert('completed')
+      (data) => this.categories=data
     );
 
   }
 
-
-
-
+deleteCategorie(id:number){
+  this.catServ.deleteCategorie(id).subscribe(
+    ()=>console.log("categorie deleted"))
+}
 
   ngAfterViewInit(){
 
