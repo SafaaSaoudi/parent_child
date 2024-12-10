@@ -63,6 +63,28 @@
       "price": 1800,
       "brand": "LG",
       "promotion": 0
+    },
+    {
+      "id": 20,
+      "name": "produit 1",
+      "image": "C:\\fakepath\\lave_vaisselle.jpg",
+      "categorieId": "",
+      "description": "new product",
+      "price": "1500",
+      "brand": "none",
+      "promotion": "0",
+      "categoryId": "3"
+    },
+    {
+      "id": 21,
+      "name": "test",
+      "image": "C:\\fakepath\\hachoir.jpg",
+      "categorieId": "",
+      "description": "testForm",
+      "price": "1300",
+      "brand": "electro",
+      "promotion": "0",
+      "categoryId": "3"
     }
   ]
 }

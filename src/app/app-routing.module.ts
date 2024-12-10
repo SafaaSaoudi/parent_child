@@ -10,6 +10,7 @@ import { ProductModule } from './product/product.module';
 import { ContactModule } from './contact/contact.module';
 import { AproposModule } from './apropos/apropos.module';
 import { AddCategorieComponent } from './add-categorie/add-categorie.component';
+import { UpdateProductComponent } from './update-product/update-product.component';
 
 const routes: Routes = [
   {
@@ -26,6 +27,7 @@ const routes: Routes = [
   {
     path:'addCategorie', component:AddCategorieComponent,
   },
+  {path:'updateProduct/:id', component:UpdateProductComponent},
   { path: 'productcategorie/:id', component: ProductCategoryComponent},
   {path:"profile", loadChildren:()=>import('./profile/profile.module').then(x=>ProfileModule)},
   {path:"product", loadChildren:()=>import('./product/product.module').then(x=>ProductModule)},
