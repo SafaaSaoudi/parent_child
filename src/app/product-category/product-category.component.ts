@@ -44,7 +44,6 @@ ngOnInit(){
   id: [''],
   name: [''],
   image: [''],  
-  categorieId: [''],
   description: [''],
   price: [''],
   brand:  [''],
@@ -57,15 +56,21 @@ ngOnInit(){
 addNewProduct(){
   this.add=true;
 }
+p!:Product;
 addProduct(){
-  let p:Product=this.addProductForm.value;
+ this.p=this.addProductForm.value;
   let len!:number;
-  p.categoryId= this.id;
-  this.productS.getAllProducts().subscribe(data => len=data.length); 
-  p.id=len+1;
-  console.log(p);
+  this.p.categoryId= this.id;
+  this.p.id= 30;
+  // this.productS.getAllProducts().subscribe(data => {
+  //   console.log(data.length);
+    
+  //   len=data.length; 
+  //   this.p.id=30;}); 
   
-  this.productS.addProduct(p).subscribe(
+  console.log(this.p);
+  
+  this.productS.addProduct(this.p).subscribe(
     ()=> {
       alert('Produit ajouté avec succès');
       this.add=false;

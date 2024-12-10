@@ -67,7 +67,7 @@
     {
       "id": 20,
       "name": "produit 1",
-      "image": "C:\\fakepath\\lave_vaisselle.jpg",
+      "image": "assets/images/lave_vaisselle.jpg",
       "categorieId": "",
       "description": "new product",
       "price": "1500",
@@ -78,12 +78,92 @@
     {
       "id": 21,
       "name": "test",
-      "image": "C:\\fakepath\\hachoir.jpg",
+      "image": "assets/images/hachoir.jpg",
       "categorieId": "",
       "description": "testForm",
       "price": "1300",
       "brand": "electro",
       "promotion": "0",
+      "categoryId": "3"
+    },
+    {
+      "id": 22,
+      "name": "test",
+      "image": "C:\\fakepath\\lave_vaisselle.jpg",
+      "description": "testForm",
+      "price": "1500",
+      "brand": "electro",
+      "promotion": "10",
+      "categoryId": "3"
+    },
+    {
+      "id": 23,
+      "name": "test",
+      "image": "C:\\fakepath\\refrigerateur.jpg",
+      "description": "test2",
+      "price": "1300",
+      "brand": "electro",
+      "promotion": "10",
+      "categoryId": "3"
+    },
+    {
+      "id": 24,
+      "name": "test",
+      "image": "C:\\fakepath\\lave_vaisselle.jpg",
+      "description": "testForm",
+      "price": "1500",
+      "brand": "electro",
+      "promotion": "10",
+      "categoryId": "3"
+    },
+    {
+      "id": 8,
+      "name": "test",
+      "image": "C:\\fakepath\\lave_vaisselle.jpg",
+      "description": "testForm",
+      "price": "1500",
+      "brand": "lg",
+      "promotion": "10",
+      "categoryId": "3"
+    },
+    {
+      "id": 25,
+      "name": "",
+      "image": "",
+      "description": "",
+      "price": "",
+      "brand": "",
+      "promotion": "",
+      "categoryId": "3"
+    },
+    {
+      "id": 30,
+      "name": "",
+      "image": "",
+      "description": "",
+      "price": "",
+      "brand": "",
+      "promotion": "",
+      "categoryId": "3"
+    },
+    {
+      "id": 11,
+      "name": "",
+      "image": "",
+      "description": "",
+      "price": "",
+      "brand": "",
+      "promotion": "",
+      "categoryId": "3"
+    },
+    {
+      "id": 12,
+      "name": "",
+      "image": "",
+      "description": "",
+      "price": "",
+      "brand": "",
+      "promotion": "",
       "categoryId": "3"
     }
   ]
