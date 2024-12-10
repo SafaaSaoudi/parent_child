@@ -21,25 +21,19 @@ export class CategorieService {
   }
 
   getCategorieById(id:number){
-    return this.http.get(this.URL+'/'+id);
+    return this.http.get<Categorie>(this.URL+'/'+id);
   }
 
-  addCategorie(P:Categorie){
-    return this.http.post(this.URL, P);
+  addCategorie(C:Categorie){
+    return this.http.post(this.URL, C);
   }
 
   updateCategorie(C:Categorie){
     return this.http.put(this.URL+'/'+C.id, C);
   }
 
-  deleteCategorie(id:number){
+  deleteCategorie(id:any){
     //Delete des produits par categorie
-
-    this.productS.getProductByCategorie(id).subscribe(
-      (data) => {
-        data.forEach(p => this.productS.deleteProduct(p.id).subscribe())
-      } 
-    )
     return this.http.delete(this.URL+'/'+id);
   }
 

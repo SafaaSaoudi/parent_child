@@ -3,6 +3,7 @@ import { Categorie } from '../models/categorie';
 import { Shortlist } from '../models/shortlist';
 import { CardComponent } from '../card/card.component';
 import { CategorieService } from '../core/categorie.service';
+import { ProduitService } from '../core/produit.service';
 
 @Component({
   selector: 'app-list-categories',
@@ -11,7 +12,7 @@ import { CategorieService } from '../core/categorie.service';
 })
 export class ListCategoriesComponent {
  
-  constructor(private catServ: CategorieService){}
+  constructor(private catServ: CategorieService, private productS: ProduitService){}
 
   categories: Categorie[] = []
   
@@ -29,6 +30,14 @@ export class ListCategoriesComponent {
   }
 
 deleteCategorie(id:number){
+  this.productS.getProductByCategorie(id).subscribe(
+    data =>{
+      data.forEach(e=>this.productS.deleteProduct(e.id).subscribe(
+        ()=>console.log("product deleted")
+      ))
+    }
+  )
+  
   this.catServ.deleteCategorie(id).subscribe(
     ()=>console.log("categorie deleted"))
 }
